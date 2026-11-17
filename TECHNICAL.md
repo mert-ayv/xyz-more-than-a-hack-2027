@@ -82,7 +82,7 @@ We did not write hand rules; the model learns the label conventions above and th
   - **On SkillCorner's own tracker possession field** (`possession.group`), the ensemble scores spellF1 0.351 (90% CI 0.341–0.360). That is below our older, hand-built peak decoder at 0.415, and the ensemble predicts 22% too many possessions.
   - **On labels built from SkillCorner's events, the two are close:** 0.581 vs 0.590.
   - **Not the frame rate:** a 10 fps control on our development games changes the ensemble by −0.002.
-  - **Open:** the gap comes from label convention, broadcast tracking (off-screen players are extrapolated), or both. We could not separate them.
+  - **Most likely label convention, not noise:** we raised the simulated noise on our development games ×1.5 and ×2, scored on their own labels. The ensemble then predicts *fewer* possessions, not more, and the best switch cost stays at 8. A label-free count prior on the switch cost, with its target taken from the DFL labels, never fires on development or SkillCorner games.
   - **Decoder:** a stickier setting, (24, 32, 1), recovers +0.028 there but costs −0.017 on the development games, so we kept (8, 8, 1). It is the first thing we would revisit with tracker-labelled real games.
 - With more time: more training matches with tracker-derived labels, and learning the target's ball filter instead of assuming a Gaussian.
 
