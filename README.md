@@ -6,7 +6,7 @@ provided match, with an auxiliary ball-contact head; three variants (3,000 steps
 ## Reproduce the CSV (CPU, about a minute)
 
 Python 3.11 with `pip install -r requirements-reproduce.txt` (numpy, pandas, scipy, Torch 2.8 CPU). `MTAH_DATA_DIR` holds the supplied
-`tactical/BAR-ATH_tactical_atd.txt`, `BAR-ATH_tactical_atd.xml` and `BAR-ATH_tactical_smart_tagging.xml`.
+`tactical/BAR-ATH_tactical_atd.txt`, `BAR-ATH_tactical_atd.xml` and `BAR-ATH_tactical_smart_tagging.xml`. The data is not in this repository: it is the organisers' gated bundle, see `DATA.md` in [metrica-sports/more-than-a-hack-2027](https://github.com/metrica-sports/more-than-a-hack-2027).
 
 ```bash
 export MTAH_DATA_DIR=/absolute/path/to/data
