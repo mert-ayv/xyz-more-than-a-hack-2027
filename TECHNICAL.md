@@ -1,6 +1,6 @@
 # Team Xyz — possession from tracking
 
-> Draft for deliverable 3 (SUBMISSION.md). Numbers are development-game results; none come from the provided match's labels.
+> Technical document for the Initial Challenge (deliverable 3, SUBMISSION.md). Numbers are development-game results; none come from the provided match's labels.
 
 ## Approach
 
