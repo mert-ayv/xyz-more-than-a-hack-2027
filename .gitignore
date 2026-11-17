@@ -1,0 +1,8 @@
+# Match data and anything built from it never go in this repo.
+data/
+work/
+dense/
+*.csv
+*.mp4
+*.npz
+__pycache__/

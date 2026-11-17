@@ -1,0 +1,5 @@
+# Versions the CSV was rebuilt with (Python 3.11, CPU).
+numpy==2.4.6
+pandas==3.1.1
+scipy==1.17.1
+torch==2.8.0
