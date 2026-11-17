@@ -77,6 +77,13 @@ We did not write hand rules; the model learns the label conventions above and th
 - **σ = 8 is a stand-in.** It matches the target's ball statistics at ≤ 2 Hz; the target also has a flat high-frequency floor no Gaussian reproduces.
 - **Very short possessions** (< 1 s, rapid exchanges) are mostly missed: the tracking rarely carries a clear contact, and every screen we built for them failed.
 - **Label conventions differ** between Metrica (event-derived) and DFL (tracker-derived) and the organisers' ground truth; seven games is little data for that.
+- **Real broadcast tracking is harder than our simulated noise.**
+  - **What we ran:** a check on the 20 open SkillCorner A-League games (MIT licence, broadcast tracking at 10 fps). Nothing was tuned on them. The pipeline was unchanged: σ = 8 ball, decoder (8, 8, 1).
+  - **On SkillCorner's own tracker possession field** (`possession.group`), the ensemble scores spellF1 0.351 (90% CI 0.341–0.360). That is below our older, hand-built peak decoder at 0.415, and the ensemble predicts 22% too many possessions.
+  - **On labels built from SkillCorner's events, the two are close:** 0.581 vs 0.590.
+  - **Not the frame rate:** a 10 fps control on our development games changes the ensemble by −0.002.
+  - **Open:** the gap comes from label convention, broadcast tracking (off-screen players are extrapolated), or both. We could not separate them.
+  - **Decoder:** a stickier setting, (24, 32, 1), recovers +0.028 there but costs −0.017 on the development games, so we kept (8, 8, 1). It is the first thing we would revisit with tracker-labelled real games.
 - With more time: more training matches with tracker-derived labels, and learning the target's ball filter instead of assuming a Gaussian.
 
 ## Reproduction
